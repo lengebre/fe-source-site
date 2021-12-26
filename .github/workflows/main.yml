@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Github CheckOut
         uses: actions/checkout@v1
+        run: |
+          cd fe-site
       - name: Get AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
