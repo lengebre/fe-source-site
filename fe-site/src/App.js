@@ -1,13 +1,23 @@
 
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Contact from "./components/Contact/Contact";
+import About from "./components/About/About";
+import Navbar from "./components/Navbar/Navbar";
+import Project from "./components/Projects/Project";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App__Header">
-        <h1> FE Site</h1>
-      </header>
-    </div>
+    <Router>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/projects" element={<Project />} />
+    </Routes>
+    </Router>
   );
 }
 
